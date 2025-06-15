@@ -22,6 +22,21 @@ export default function Layout() {
                     </TouchableOpacity>
                 )
                 }} />
+            <Stack.Screen name="account" options={{ 
+                headerShown: true, 
+                title: 'Account',
+                headerStyle: {
+                    backgroundColor: 'rgb(242, 242, 242)'
+                },
+                headerTintColor: 'black',
+                headerShadowVisible: false,
+                headerBackVisible: false,
+                headerLeft: () => (
+                    <TouchableOpacity onPress={() => router.back()}>
+                        <IconSymbol size={25} name="chevron.left" color="black" />
+                    </TouchableOpacity>
+                )
+            }} />
         </Stack>
     )
 }

@@ -16,7 +16,7 @@ export default function ProfileInfo({ title, value }: { title: string, value: st
                 </TouchableOpacity>
             </View>
             <Modal visible={isModalVisible} animationType="slide" style={styles.modal}>
-                <SafeAreaView>
+                <SafeAreaView style={styles.modalContainer}>
                     <View style={styles.modalHeader}>
                         <TouchableOpacity onPress={() => setIsModalVisible(false)}>
                             <Text style={styles.modalButtonText}>Cancel</Text>
@@ -67,24 +67,20 @@ const styles = StyleSheet.create({
         gap: 10,
         paddingHorizontal: 15,
         paddingVertical: 12,
-        backgroundColor: 'white',
         borderRadius: 10,
     },
     modal: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     modalInput: {
-        width: '100%',
         backgroundColor: 'white',
         borderRadius: 10,
-    },
-    modalButton: {
-        backgroundColor: '#067D2B',
-        padding: 10,
-        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        marginHorizontal: 10,
+        fontSize: 18
     },
     modalButtonText: {
         color: 'black',
@@ -94,5 +90,9 @@ const styles = StyleSheet.create({
     modalTitle: {
         fontSize: 20,
         fontWeight: 'bold',
+    },
+    modalContainer: {
+        flex: 1,
+        backgroundColor: 'rgb(242, 242, 242)',
     }
 })

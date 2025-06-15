@@ -1,4 +1,5 @@
 import SearchBar from "@/components/chats/SearchBar";
+import { IconSymbol } from "@/components/ui/IconSymbol";
 import { router } from "expo-router";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
@@ -14,6 +15,13 @@ export default function Settings() {
                         <Text style={styles.profileName}>John Doe</Text>
                         <Text style={styles.profileStatus}>Available</Text>
                     </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.settingsTabContainer} onPress={() => router.push("/account")}>
+                    <View style={styles.settingsTabTextContainer}>
+                        <IconSymbol name="key" size={20} color="black" />
+                        <Text style={styles.settingsTabText}>Account</Text>
+                    </View>
+                    <IconSymbol name="chevron.right" size={20} color="gray" />
                 </TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
@@ -37,7 +45,8 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         backgroundColor: 'white',
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        marginBottom: 10
     },
     profileImage: {
         width: 50,
@@ -54,5 +63,24 @@ const styles = StyleSheet.create({
     profileStatus: {
         fontSize: 14,
         color: 'green',
+    },
+    settingsTabContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 10,
+        padding: 15,
+        borderRadius: 10,
+        backgroundColor: 'white',
+        marginHorizontal: 10,
+        marginBottom: 10
+    },
+    settingsTabTextContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+    },
+    settingsTabText: {
+        fontSize: 20,
     }
 })
